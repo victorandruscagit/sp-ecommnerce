@@ -1,5 +1,6 @@
 package com.andrusca.ecommerce.config;
 
+import com.andrusca.ecommerce.entity.Country;
 import com.andrusca.ecommerce.entity.Product;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.metamodel.EntityType;
@@ -29,11 +30,11 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
         HttpMethod[] theUnsuportedActions = {HttpMethod.DELETE, HttpMethod.PUT, HttpMethod.DELETE};
         //disable for put, post, delete
         config.getExposureConfiguration()
-                .forDomainType(Product.class)
+                .forDomainType(Country.class)
                 .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsuportedActions))
                 .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsuportedActions));
 
-        exposeIds(config);
+        exposeIds(config);  
     }
 
     private void exposeIds(RepositoryRestConfiguration config) {

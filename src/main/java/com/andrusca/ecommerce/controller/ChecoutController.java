@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.naming.ldap.PagedResultsControl;
 
-@CrossOrigin("http://localohost:4200")
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/checkout")
 public class ChecoutController {
